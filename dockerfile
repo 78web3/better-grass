@@ -8,7 +8,7 @@ ENV NODE_ENV=production
 # Install pm2
 RUN npm install -g pm2
 
-COPY * .
+COPY ./ .
 
 # Install all dependencies
 RUN npm install
@@ -20,4 +20,4 @@ RUN cp ".env.example" ".env"
 RUN sed -i "s/USER_IDS=/USER_IDS=$user_ids_var/g" .env && sed -i "s/NODE_ENV=/NODE_ENV=production/g" .env
 
 # Start the app
-CMD [ "pm2", "start", "pm2.config.js" ]
+CMD [ "pm2-runtime", "start", "pm2.config.js" ]
