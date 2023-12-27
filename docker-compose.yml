@@ -1,0 +1,6 @@
+version: '3'
+services:
+  better-grass:
+    image: better-grass:v1
+    environment:
+      user_ids_var: 86b9204d-0593-4bcd-a537-e73f73aa2d29
